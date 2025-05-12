@@ -1329,7 +1329,7 @@ MonoBehaviour:
     Debido a esto, Camilo tiene que caminar varios kil\xF3metros para llegar a su
     destino, atravesando diferentes sitios peligrosos."
   textUI: {fileID: 1619255873}
-  time: 0.1
+  time: 0.08
   audioSource: {fileID: 1619255875}
   typingSound: {fileID: 8300000, guid: eb0b6fb08deecf1498cb99e7aa5e1f7c, type: 3}
 --- !u!114 &1619255873

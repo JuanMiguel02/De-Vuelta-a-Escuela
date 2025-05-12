@@ -170,6 +170,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 10
   jumpSpeed: 18
+  jumpSound: {fileID: 8300000, guid: 17e87f2ccf1fcbd40a9e13a26a4edf1a, type: 3}
+  velocidadRebote: 20
+  deathSound: {fileID: 8300000, guid: e89d267d613da094a8425ccf981c15b9, type: 3}
 --- !u!95 &293774759094117473
 Animator:
   serializedVersion: 7

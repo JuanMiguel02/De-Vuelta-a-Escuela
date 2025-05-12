@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02054be960db8434181cf0306e7490d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SonidoGolpe: {fileID: 8300000, guid: 6e967135b7167a141965a54ac3657570, type: 3}
 --- !u!1 &6168282893164550811
 GameObject:
   m_ObjectHideFlags: 0

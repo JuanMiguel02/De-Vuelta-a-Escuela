@@ -7,11 +7,13 @@ TagManager:
   - Platform
   - enemy
   - Enemy
+  - Spike
+  - Obstaculo
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - spike
   - Water
   - UI
   - ground

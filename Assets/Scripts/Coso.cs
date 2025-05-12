@@ -6,7 +6,7 @@ public class Coso : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private bool golpeado = false;
-
+    [SerializeField] private AudioClip SonidoGolpe;
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -33,6 +33,7 @@ public class Coso : MonoBehaviour
                 golpeado = true;
                 animator.SetTrigger("Golpe");
                 StartCoroutine(Morir());
+                ControladorSonidos.Instance.EjecutarSonido(SonidoGolpe, 0.5f);
                 other.gameObject.GetComponent<Player>().Rebote();
             }
             else
