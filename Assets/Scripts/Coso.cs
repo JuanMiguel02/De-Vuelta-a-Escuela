@@ -33,7 +33,7 @@ public class Coso : MonoBehaviour
                 golpeado = true;
                 animator.SetTrigger("Golpe");
                 StartCoroutine(Morir());
-                ControladorSonidos.Instance.EjecutarSonido(SonidoGolpe, 0.5f);
+                ControladorSonidos.Instance.EjecutarSonido(SonidoGolpe, 0.8f);
                 other.gameObject.GetComponent<Player>().Rebote();
             }
             else
