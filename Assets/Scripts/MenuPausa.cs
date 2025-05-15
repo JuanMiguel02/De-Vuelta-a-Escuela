@@ -62,6 +62,12 @@ public class MenuPausa : MonoBehaviour
     public void Reiniciar()
     {
         Time.timeScale = 1f;
+        if (GameManager.Instance != null) {
+            GameManager.Instance.ReiniciarPuntos();
+        }
+        if (HUD.Instance != null) {
+            Destroy(HUD.Instance.gameObject);
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

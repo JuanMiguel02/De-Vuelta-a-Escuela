@@ -146,18 +146,28 @@ public class Player : MonoBehaviour
         float intervalo = 0.2f;
         float tiempo = 0;
 
-        while (tiempo < duracion)
-        {
-            spriteRenderer.enabled = false;
-            yield return new WaitForSeconds(intervalo);
+        RigidbodyConstraints2D restriccionesOriginales = rigidbody.constraints;
 
-            spriteRenderer.enabled = true;
-            yield return new WaitForSeconds(intervalo);
+        rigidbody.linearVelocity = Vector2.zero;
+        rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
 
-            tiempo += intervalo * 2;
-        }
+        animator.enabled = false;
+
+        
+            while (tiempo < duracion)
+            {
+                spriteRenderer.enabled = false;
+                yield return new WaitForSeconds(intervalo);
+
+                spriteRenderer.enabled = true;
+                yield return new WaitForSeconds(intervalo);
+
+                tiempo += intervalo * 2;
+            }
 
         Recolocar();
+        rigidbody.constraints = restriccionesOriginales;
+        animator.enabled = true;
         sonidoReproducido = false;
         playerAlive = true;
     }

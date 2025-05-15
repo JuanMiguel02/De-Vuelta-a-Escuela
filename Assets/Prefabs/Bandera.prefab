@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controladorJuego: {fileID: 0}
+  SonidoCambio: {fileID: 8300000, guid: e096273a6db8b68458a0278c0c382634, type: 3}
 --- !u!1 &7540557126565516284
 GameObject:
   m_ObjectHideFlags: 0
