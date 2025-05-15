@@ -1,50 +1,84 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class MenuPausa : MonoBehaviour
 {
     [SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject menuPausa;
-    
+    private AudioSource musica;
+
     private bool juegoPausado = false;
 
-    private void Update() {
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            if(juegoPausado){
+    private void Start()
+    {
+        // Intenta obtener el AudioSource de la cámara principal automáticamente
+        if (musica == null && Camera.main != null)
+        {
+            musica = Camera.main.GetComponent<AudioSource>();
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (juegoPausado)
+            {
                 Reanudar();
-            }else{
+            }
+            else
+            {
                 Pausa();
             }
         }
     }
-    public void Pausa(){
+
+    public void Pausa()
+    {
         juegoPausado = true;
-        Time.timeScale = 0f; 
+        Time.timeScale = 0f;
         botonPausa.SetActive(false);
         menuPausa.SetActive(true);
+
+        if (musica != null)
+        {
+            musica.Pause();
+        }
     }
 
-    public void Reanudar(){
+    public void Reanudar()
+    {
         juegoPausado = false;
-        Time.timeScale = 1f; 
+        Time.timeScale = 1f;
         botonPausa.SetActive(true);
         menuPausa.SetActive(false);
+
+        if (musica != null)
+        {
+            musica.UnPause();
+        }
     }
 
-    public void Cerrar(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-         Time.timeScale = 1f; // Reanuda por si estaba pausado
-
-    if (GameManager.Instance != null)
+    public void Reiniciar()
     {
-        GameManager.Instance.ReiniciarPuntos(); // Reinicia los puntos al salir
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    // Elimina el HUD persistente para que se cree de nuevo en la próxima partida
-    if (HUD.Instance != null)
+    public void Cerrar()
     {
-        Destroy(HUD.Instance.gameObject);
-    }
+        Time.timeScale = 1f;
 
-    SceneManager.LoadScene(0); // Asumiendo que la escena 0 es el menú principal
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.ReiniciarPuntos();
+        }
+
+        if (HUD.Instance != null)
+        {
+            Destroy(HUD.Instance.gameObject);
+        }
+        
+        SceneManager.LoadScene(0); // Cargar el menú principal
     }
 }
