@@ -5,12 +5,11 @@ public class MenuGameOver : MonoBehaviour
 {
     public void Reiniciar()
     {
-       Time.timeScale = 1f;
-        int indiceActual = SceneManager.GetActiveScene().buildIndex;
-
-        if (GameManager.Instance != null && indiceActual == 2)
+        Time.timeScale = 1f;
+       
+        if (GameManager.Instance != null )
         {
-            GameManager.Instance.ReiniciarPuntos();
+            GameManager.Instance.RestaurarPuntosDesdeRespaldo(); 
         }
         if (HUD.Instance != null) {
             Destroy(HUD.Instance.gameObject);
