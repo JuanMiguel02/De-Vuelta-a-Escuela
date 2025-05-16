@@ -3798,7 +3798,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.3659382, y: 1.2696899, z: -12}
+  m_LocalPosition: {x: 158.3984, y: 1.3721399, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19618,7 +19618,7 @@ Transform:
   m_GameObject: {fileID: 1622303429}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -7.297504e-30, z: -1.5204365e-19, w: 1}
-  m_LocalPosition: {x: -8.620001, y: 2.5299997, z: -12}
+  m_LocalPosition: {x: 158.38, y: 5.5299997, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24042,6 +24042,10 @@ PrefabInstance:
       propertyPath: menuGameOver
       value: 
       objectReference: {fileID: 2568468855804090498}
+    - target: {fileID: 5692420267770045006, guid: f5052b79cde902f43bf7c1f97eb2cc64, type: 3}
+      propertyPath: tiempoMaximo
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 7061739845140888277, guid: f5052b79cde902f43bf7c1f97eb2cc64, type: 3}
       propertyPath: m_Name
       value: ControladorJuego
@@ -24124,11 +24128,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148930629164294818, guid: 36fee51787c4ea948963361e798ba99b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.12
+      value: 145.88
       objectReference: {fileID: 0}
     - target: {fileID: 9148930629164294818, guid: 36fee51787c4ea948963361e798ba99b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.67
+      value: 0.32999992
       objectReference: {fileID: 0}
     - target: {fileID: 9148930629164294818, guid: 36fee51787c4ea948963361e798ba99b, type: 3}
       propertyPath: m_LocalPosition.z

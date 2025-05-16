@@ -5,10 +5,12 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     private int puntosTotales;
+    private int puntosRespaldo;
 
-    public int PuntosTotales{
-          get => puntosTotales;
-         set => puntosTotales = value;
+    public int PuntosTotales
+    {
+        get => puntosTotales;
+        set => puntosTotales = value;
     }
 
     private void Awake()
@@ -36,5 +38,13 @@ public class GameManager : MonoBehaviour
     public void ReiniciarPuntos()
     {
         puntosTotales = 0;
+    }
+    public void GuardarPuntosDeRespaldo()
+    {
+        puntosRespaldo = puntosTotales;
+    }
+    public void RestaurarPuntosDesdeRespaldo()
+    {
+        puntosTotales = puntosRespaldo;
     }
 }

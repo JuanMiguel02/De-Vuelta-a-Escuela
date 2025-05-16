@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     Collider2D collider;
     SpriteRenderer spriteRenderer;
     Animator animator;
-    float xInicial, yInicial;   
+    float xInicial, yInicial;
     [SerializeField] private AudioClip jumpSound;
     [Header("Rebote")]
     [SerializeField] private float velocidadRebote;
@@ -27,11 +27,11 @@ public class Player : MonoBehaviour
         collider = gameObject.GetComponent<Collider2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         animator = gameObject.GetComponent<Animator>();
-        
+
     }
 
     void Update()
-    {    
+    {
         if (playerAlive)
         {
             string escenaActual = SceneManager.GetActiveScene().name;
@@ -45,11 +45,11 @@ public class Player : MonoBehaviour
             if (escenaActual != "Escena 1" && transform.position.x > 146.28f)
                 transform.position = new Vector3(146.28f, transform.position.y, transform.position.z);
 
-            Run();  
+            Run();
             Jump();
             FlipSprite();
             CheckForGround();
-            
+
         }
     }
 
@@ -90,12 +90,7 @@ public class Player : MonoBehaviour
     {
         rigidbody.linearVelocity = Vector2.zero;// Detiene completamente el movimiento
 
-        if(!sonidoReproducido)
-        {
-            ControladorSonidos.Instance.EjecutarSonido(deathSound, 0.5f);
-            sonidoReproducido = true;
-        }  
-        
+ 
         transform.position = new Vector3(xInicial, yInicial, transform.position.z);
     }
 
@@ -107,9 +102,9 @@ public class Player : MonoBehaviour
         }
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("spike"))
-    {
-        RecibirDaño();
-    }
+        {
+            RecibirDaño();
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -128,13 +123,9 @@ public class Player : MonoBehaviour
     public void RecibirDaño()
     {
         if (!playerAlive) return;
-        
-        if(!sonidoReproducido){
 
         ControladorSonidos.Instance.EjecutarSonido(deathSound, 0.5f);
-        sonidoReproducido = true;
-        }
-
+    
         playerAlive = false;
         rigidbody.linearVelocity = Vector2.zero;
         StartCoroutine(ParpadeoYReaparicion());
@@ -153,17 +144,17 @@ public class Player : MonoBehaviour
 
         animator.enabled = false;
 
-        
-            while (tiempo < duracion)
-            {
-                spriteRenderer.enabled = false;
-                yield return new WaitForSeconds(intervalo);
 
-                spriteRenderer.enabled = true;
-                yield return new WaitForSeconds(intervalo);
+        while (tiempo < duracion)
+        {
+            spriteRenderer.enabled = false;
+            yield return new WaitForSeconds(intervalo);
 
-                tiempo += intervalo * 2;
-            }
+            spriteRenderer.enabled = true;
+            yield return new WaitForSeconds(intervalo);
+
+            tiempo += intervalo * 2;
+        }
 
         Recolocar();
         rigidbody.constraints = restriccionesOriginales;
@@ -171,4 +162,5 @@ public class Player : MonoBehaviour
         sonidoReproducido = false;
         playerAlive = true;
     }
+    
 }
