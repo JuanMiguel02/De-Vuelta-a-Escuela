@@ -17,7 +17,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float velocidadRebote;
     bool playerAlive = true;
     [SerializeField] public AudioClip deathSound;
-    bool sonidoReproducido = false;
+  
+    public float DireccionX => rigidbody.linearVelocity.x;
 
     void Start()
     {
@@ -36,14 +37,20 @@ public class Player : MonoBehaviour
         {
             string escenaActual = SceneManager.GetActiveScene().name;
 
-            if (transform.position.x < -27.6f)
-                transform.position = new Vector3(-27.6f, transform.position.y, transform.position.z);
+            if (transform.position.x < -40.12f)
+                transform.position = new Vector3(-40.12f, transform.position.y, transform.position.z);
 
-            if (transform.position.x > 186.89f)
-                transform.position = new Vector3(186.89f, transform.position.y, transform.position.z);
+            if (escenaActual != "Escena 1" && escenaActual != "Escena 2" && transform.position.x < -27.8f)
+                transform.position = new Vector3(-27.8f, transform.position.y, transform.position.z);
+
+            if (transform.position.x > 175f)
+                transform.position = new Vector3(175f, transform.position.y, transform.position.z);
 
             if (escenaActual != "Escena 1" && transform.position.x > 146.28f)
                 transform.position = new Vector3(146.28f, transform.position.y, transform.position.z);
+
+            if (escenaActual != "Escena 1" && escenaActual != "Escena 3" && transform.position.x > 134f)
+                transform.position = new Vector3(134f, transform.position.y, transform.position.z);
 
             Run();
             Jump();
@@ -159,7 +166,7 @@ public class Player : MonoBehaviour
         Recolocar();
         rigidbody.constraints = restriccionesOriginales;
         animator.enabled = true;
-        sonidoReproducido = false;
+      
         playerAlive = true;
     }
     

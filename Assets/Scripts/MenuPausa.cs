@@ -65,7 +65,17 @@ public class MenuPausa : MonoBehaviour
 
         if (GameManager.Instance != null)
         {
-              GameManager.Instance.RestaurarPuntosDesdeRespaldo(); 
+            int escenaActual = SceneManager.GetActiveScene().buildIndex;
+
+            if (escenaActual == 2)
+            {
+                GameManager.Instance.ReiniciarPuntos();
+            }
+            else
+            {
+                GameManager.Instance.RestaurarPuntosDesdeRespaldo();
+            }
+          
         }
         if (HUD.Instance != null) {
             Destroy(HUD.Instance.gameObject);

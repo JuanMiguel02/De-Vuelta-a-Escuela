@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
+using System;
+using Unity.VisualScripting;
 public class HUD : MonoBehaviour
 {
     public static HUD Instance;
@@ -14,6 +16,7 @@ public class HUD : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject); // No se destruye entre escenas
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
@@ -21,17 +24,43 @@ public class HUD : MonoBehaviour
         }
     }
 
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        int index = scene.buildIndex;
+
+        if (index > 4)
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+            Destroy(gameObject);
+        }
+        else
+        {
+
+            gameObject.SetActive(index != 0);
+        }
+        if (index == 1)
+        {
+            GameManager.Instance.ReiniciarPuntos();
+        }
+
+    }
+
     void Start()
     {
-        gameManager = GameManager.Instance;
-         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 0)
-    {
-        gameObject.SetActive(false);
-    }
+       gameManager = GameManager.Instance;
     }
 
     void Update()
     {
-        puntos.text = gameManager.PuntosTotales.ToString();
+        if (gameManager != null)
+        {
+            puntos.text = gameManager.PuntosTotales.ToString();
+        }
+
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded; 
     }
 }

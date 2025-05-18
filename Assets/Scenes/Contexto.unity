@@ -1324,10 +1324,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94417c96be0495443a788fd976d0d521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToShow: "Camilo es un ni\xF1o que habita en una vereda, su familia no es de
+  textToShow: " Camilo es un ni\xF1o que habita en una vereda, su familia no es de
     muchos recursos, y adem\xE1s, no existe un transporte que lo lleve a su escuela.
-    Debido a esto, Camilo tiene que caminar varios kil\xF3metros para llegar a su
-    destino, atravesando diferentes sitios peligrosos."
+    Debido a esto, Camilo parte muy temprano y debe de caminar varios kil\xF3metros
+    para llegar a  tiempo a su destino, atravesando diferentes sitios peligrosos."
   textUI: {fileID: 1619255873}
   time: 0.08
   audioSource: {fileID: 1619255875}
@@ -1354,8 +1354,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: " Camilo es un ni\xF1o que habita en una vereda, su familia no es de muchos
     recursos, y adem\xE1s, no existe un transporte que lo lleve a su escuela. Debido
-    a esto, Camilo tiene que caminar varios kil\xF3metros para llegar a su destino,
-    atravesando diferentes sitios peligrosos."
+    a esto, Camilo parte muy temprano y debe de caminar varios kil\xF3metros para
+    llegar a  tiempo a su destino, atravesando diferentes sitios peligrosos."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dd48f69166151dc46ba1a45e17af49b1, type: 2}
   m_sharedMaterial: {fileID: -4558479436906559497, guid: dd48f69166151dc46ba1a45e17af49b1, type: 2}
