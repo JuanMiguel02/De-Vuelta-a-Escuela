@@ -24,19 +24,4 @@ public class ControladorSonidos : MonoBehaviour
         audioSource.loop = false;
         audioSource.PlayOneShot(sonido, volumen);
     }
-    public void EjecutarSonidoLoop(AudioClip sonido, float volumen = 1f)
-    {
-        if (audioSource.clip == sonido && audioSource.isPlaying)
-            return;
-        audioSource.clip = sonido;
-        audioSource.volume = volumen;
-        audioSource.loop = true;
-        audioSource.Play();
-    }
-    public void DetenerLoop()
-    {
-        audioSource.Stop();
-        audioSource.loop = false;
-        audioSource.clip = null;
-    }
 }

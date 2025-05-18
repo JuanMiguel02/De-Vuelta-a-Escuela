@@ -124,8 +124,8 @@ MonoBehaviour:
   tiempoDisolverEntrada: 2
   tiempoDisolverSalida: 0
   bloqueObject: {fileID: 1554068732486595900}
-  tiempoBloqueEntrada: 2
-  tiempoBloqueSalida: 2
+  tiempoBloqueEntrada: 1
+  tiempoBloqueSalida: 1
   bloqueEaseEntrada: 1
   bloqueEaseSalida: 0
   posicionFinalEntrada: 3500

@@ -20,7 +20,8 @@ public class Coso : MonoBehaviour
             bool fueDesdeArriba = false;
 
             foreach (ContactPoint2D punto in other.contacts)
-            {
+            {   
+                // colisión desde arriba hacia abajo
                 if (punto.normal.y <= -0.9f)
                 {
                     fueDesdeArriba = true;

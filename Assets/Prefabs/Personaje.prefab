@@ -173,6 +173,7 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: 17e87f2ccf1fcbd40a9e13a26a4edf1a, type: 3}
   velocidadRebote: 20
   deathSound: {fileID: 8300000, guid: e89d267d613da094a8425ccf981c15b9, type: 3}
+  menuGameOver: {fileID: 6089280970246085362, guid: ae3418ba9c8c0c744af9748d275e5e2d, type: 3}
 --- !u!95 &293774759094117473
 Animator:
   serializedVersion: 7

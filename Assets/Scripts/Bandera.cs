@@ -12,6 +12,11 @@ private void OnTriggerEnter2D(Collider2D other)
     {
         yaActivado = true;
         controladorJuego.DesactivarTemporizador();
+            if (GameManager.Instance != null)
+            {
+                float tiempoEscena = controladorJuego.ObtenerTiempoJugado();
+                GameManager.Instance.SumarTiempo(tiempoEscena);
+            }
         ControladorSonidos.Instance.EjecutarSonido(SonidoCambio, 0.8f);
         GameManager.Instance.GuardarPuntosDeRespaldo();
         TransicionEscenasUI.Instance.BloqueSalida(SceneManager.GetActiveScene().buildIndex + 1);

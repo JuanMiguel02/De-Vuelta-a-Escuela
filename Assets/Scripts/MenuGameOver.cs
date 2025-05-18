@@ -14,6 +14,7 @@ public class MenuGameOver : MonoBehaviour
             if (escenaActual == 2)
             {
                 GameManager.Instance.ReiniciarPuntos();
+                GameManager.Instance.TiempoAcumulado = 0f;
             }
             else
             {
@@ -30,9 +31,11 @@ public class MenuGameOver : MonoBehaviour
     public void VolverMenuPrincipal(string nombreEscena)
     {
         Time.timeScale = 1f;
-        
-        if (GameManager.Instance != null) {
+
+        if (GameManager.Instance != null)
+        {
             GameManager.Instance.ReiniciarPuntos();
+            GameManager.Instance.TiempoAcumulado = 0f;
         }
         if (HUD.Instance != null) {
             Destroy(HUD.Instance.gameObject);

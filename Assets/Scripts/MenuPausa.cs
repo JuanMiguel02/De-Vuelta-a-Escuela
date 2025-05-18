@@ -70,6 +70,7 @@ public class MenuPausa : MonoBehaviour
             if (escenaActual == 2)
             {
                 GameManager.Instance.ReiniciarPuntos();
+                GameManager.Instance.TiempoAcumulado = 0f;
             }
             else
             {

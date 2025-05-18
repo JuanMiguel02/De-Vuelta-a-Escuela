@@ -220,7 +220,7 @@ MonoBehaviour:
   point1: {fileID: 0}
   point2: {fileID: 0}
   startingPoint: {fileID: 0}
-  platformSpeed: 2
+  platformSpeed: 4
 --- !u!1 &5489987663516615821
 GameObject:
   m_ObjectHideFlags: 0

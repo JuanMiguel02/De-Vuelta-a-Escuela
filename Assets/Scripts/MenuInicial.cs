@@ -16,11 +16,19 @@ public class MenuInicial : MonoBehaviour
 
      public void Reintentar()
      {
+          if (GameManager.Instance != null)
+          {
+               GameManager.Instance.TiempoAcumulado = 0f;
+          }
           TransicionEscenasUI.Instance.BloqueSalida(2);
           GameManager.Instance.ReiniciarPuntos();
      }
      public void MenuPrincipal()
      {
+          if (GameManager.Instance != null)
+          {
+               GameManager.Instance.TiempoAcumulado = 0f;
+          }
           TransicionEscenasUI.Instance.BloqueSalida(0);
      }
 
